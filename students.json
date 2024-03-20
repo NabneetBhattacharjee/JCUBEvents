@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "6114a01dd7946719e7d89751"
+  },
+  "first_name": "Rahul",
+  "last_name": "Deshmukh",
+  "course":"IT",
+  "email": "rpd@gmail.com",
+  "gender": "Male",
+  "address": "201 Queen street",
+  "reg_active": true,
+  "reg_event": {
+    "$oid": "611492f866dbf10edc7ad171"
+  },
+  "updatedAt": {
+    "$date": "2021-08-12T04:15:01.395Z"
+  }
+},{
+  "_id": {
+    "$oid": "6114a01dd7946719e7d89758"
+  },
+  "first_name": "Siddharth",
+  "last_name": "Patel",
+  "course":"Finance",
+  "email": "spp@gmail.com",
+  "gender": "Male",
+  "address": "125 Scrub Rd.",
+  "reg_active": "false",
+  "reg_event": null
+},{
+  "_id": {
+    "$oid": "6114a01dd7946719e7d89765"
+  },
+  "first_name": "Satyamanikiran",
+  "last_name": "Dommetti",
+  "course":"Accounting",
+  "email": "sd@gmail.com",
+  "gender": "Male",
+  "address": "12 Gaythorne Rd.",
+  "reg_active": "false",
+  "reg_event": null
+},{
+  "_id": {
+    "$oid": "6114a01dd7946719e7d89766"
+  },
+  "first_name": "Rollo",
+  "last_name": "Tomassi",
+  "course":"Psychology",
+  "email": "rt@outlook.com",
+  "gender": "Male",
+  "address": "63 Melby Way",
+  "reg_active": "false",
+  "reg_event": null
+},{
+  "_id": {
+    "$oid": "6114a01dd7946719e7d89767"
+  },
+  "first_name": "Kuladeep",
+  "last_name": "Kilari",
+  "course":"IT",
+  "email": "kk@gmail.com",
+  "gender": "Female",
+  "address": "1 Dryden Avenue",
+  "reg_active": "false",
+  "reg_event": null
+},{
+  "_id": {
+    "$oid": "6114a01dd7946719e7d89777"
+  },
+  "first_name": "Ajay",
+  "last_name": "Nori",
+  "course":"Economics",
+  "email": "an&gmail.com",
+  "gender": "Male",
+  "address": "12 Shopko Avenue",
+  "reg_active": "false",
+  "reg_event": null
+},{
+  "_id": {
+    "$oid": "6114a01dd7946719e7d89778"
+  },
+  "first_name": "Atharva",
+  "last_name": "Londhe",
+  "course":"IT",
+  "email": "al@gmail.com",
+  "gender": "Male",
+  "address": "6606 Independence Street",
+  "reg_active": "false",
+  "reg_event": null
+}]

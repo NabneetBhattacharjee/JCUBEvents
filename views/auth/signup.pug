@@ -1,0 +1,34 @@
+extends ../layout.pug
+
+block content
+	.my-5.mx-auto.shadow.p-3(style='max-width: 600px')
+		form(action='' method='POST')
+			h3.lead Create your account
+
+			include ../includes/errors.pug
+
+			.form-group.mb-2
+				label(for='name') Name
+				input#name.form-control(
+					type='text' name="name"
+					value=body.name || null
+					)
+			.form-group.mb-2
+				label(for='email') Email address
+				input#email.form-control(
+					type='email' name="email"
+					value=body.email || null
+					)
+			.form-group.mb-2
+				label(for='phone') Phone
+				input#phone.form-control(
+					type='number' name="phone"
+					value=body.phone || null
+					)
+			.form-group.mb-2
+				label(for='password') Password
+				input#password.form-control(type='password' name="password")
+			button.btn.btn-primary.mt-3.px-4(type='submit') Signup
+			p.my-2
+				| Have an account? 
+				a(href=pages.auth.login) Login

@@ -1,0 +1,23 @@
+[
+  {
+    "first_name": "Carena",
+    "last_name": "Pawelec",
+    "course":"IT",
+    "email": "cpawelec0@hostgator.com",
+    "gender": "Male",
+    "address": "9800 Hooker Lane",
+    "reg_active": "false",
+    "reg_event": null
+  },
+  {
+    "first_name": "Hebert",
+    "last_name": "Francescozzi",
+    "course":"Finance",
+    "email": "hfrancescozzi1@ft.com",
+    "gender": "Male",
+    "address": "0 Bobwhite Center",
+    "reg_active": "false",
+    "reg_event": null
+  }
+  
+]

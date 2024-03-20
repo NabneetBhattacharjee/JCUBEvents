@@ -1,0 +1,17 @@
+extend layout
+
+block content
+	if query
+		h2.lead.mt-4 Search results for #[strong #{query}]
+	else
+		h2.lead.mt-4 All results
+
+	if events.length > 0
+		ul.list-unstyled.d-flex.gap-4.flex-wrap.mt-3
+			each event in events
+				include ./events/preview
+	else
+		.my-3 
+			p.my-4 No results found
+			a.btn.btn-sm.btn-secondary(href=pages.home) Home
+	

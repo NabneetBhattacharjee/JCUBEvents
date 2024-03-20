@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+	include ./nav
+
+	-const registrations = event.registrations;
+
+	if registrations.length > 0
+		ul.row.m-0.p-0
+			p.mb-3
+				a(
+					href=pages.events.item(event._id).exportRegistrations
+					class="btn btn-sm btn-secondary"
+				) 
+					|Export to excel
+
+			each item in registrations
+				.card.col-md-3.p-0.mb-3
+					.card-body
+						h5.card-title= item.student.first_name
+						small.card-subtitle.my-2.text-muted
+							|Student ID: #[strong #{item.student._id}]
+						.card-body.p-0
+							|Email: #[strong= item.student.email]
+							br
+							|Address: #[strong= item.student.address]
+	else
+		p.mt-3.mb-5.text-white
+			span.bg-secondary.p-2.rounded-lg.shadow
+				| No user has registered for this event yet

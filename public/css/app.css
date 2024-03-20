@@ -1,0 +1,46 @@
+/* Custom CSS */
+
+body,
+html {
+  height: 100%;
+}
+
+/* Show it is fixed to the top */
+body {
+  padding-top: 5rem;
+}
+
+/* Hero css */
+.hero {
+  position: relative;
+  height: 75vh;
+  width: 100%;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*
+ * Footer
+ */
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #727272;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 0.05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Media Query */
+@media only screen and (max-width: 768px) {
+  .hero-content {
+    width: 90%;
+  }
+}

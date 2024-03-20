@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+    .my-4
+        h3.lead Enter your student id in the form below 
+            | to register for this event
+        form(
+            action=pages.events.item(event._id).storeRegistration, 
+            method="post" style="width: 300px"
+            class="shadow p-3"
+        ) 
+            .mb-3
+                include ../includes/errors
+                
+                label.mb-2(for="student_id") Student Id
+                input#student_id.form-control(
+                    type="text", name="student_id"
+                )
+            button.btn.btn-sm.btn-primary(type="submit") 
+                |Register

@@ -1,0 +1,25 @@
+if user
+	if event.owner.equals(user._id)
+		ul.nav.nav-pills.my-3.py-2.bg-light
+			li.nav-item
+				a.nav-link(
+					href=pages.events.item(event._id).show
+					class=(tab === pages.events.item(event._id).show ? "active" : "")
+				)
+					|Event Dashboard
+				li.nav-item
+					a.nav-link(
+						href=pages.events.item(event._id).edit
+						class=(tab === pages.events.item(event._id).edit ? "active" : "")
+					)
+						| Edit Event
+				li.nav-item
+					a.nav-link(
+						href=pages.events.item(event._id).registrations
+						class=(
+							tab === pages.events.item(event._id).registrations 
+								? "active" 
+								: ""
+							)
+					)
+						| Event Registrations

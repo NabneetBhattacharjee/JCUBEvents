@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+	h4.my-4 Select an event to manage
+
+	if events.length > 0
+		ul.list-unstyled.d-flex.gap-4.flex-wrap.mt-3
+			each event in events
+				include ./preview
+	else
+		p.text-info No events found
+	

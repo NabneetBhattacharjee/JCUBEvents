@@ -1,0 +1,17 @@
+//- Only show errors if they exist
+if errors.length
+	ul.p-3.shadow-sm.alert.alert-danger.list-unstyled.alert-dismissible.fade.show(
+		role='alert'
+	)
+		button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+		each error in errors
+			-let field, msg;
+			-
+				for (const [key, value] of Object.entries(error)) {
+					field = key;
+					msg = value;
+				}
+			-
+			
+			li #[strong.me-4 #{field}] #[span #{msg}]
+			

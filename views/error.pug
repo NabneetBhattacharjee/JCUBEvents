@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	.text-center.my-3
+		h3.my-4= message
+		h4.my-5= httpStatus || error.status
+		a(href=pages.home class="btn btn-sm btn-outline-secondary") Home
+		if error
+			.text-start.p-3.shadow.bg-light.mt-4
+				pre #{error.stack}

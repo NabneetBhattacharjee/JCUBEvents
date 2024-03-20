@@ -1,0 +1,33 @@
+//- If logged in, show link to request owner access if not owner already
+if user && user.role === roles.user
+	//- Button trigger modal
+	button.btn.btn-sm.btn-secondary(
+		type='button' data-bs-toggle='modal' data-bs-target='#ownerModal'
+	)
+		| Request Owner Access
+	//- Modal
+	#ownerModal.modal.fade(
+		tabindex='-1' aria-labelledby='ownerModalLabel' aria-hidden='true'
+	)
+		.modal-dialog
+			.modal-content
+				.modal-header
+					h5#ownerModalLabel.modal-title Request Owner Access
+					button.btn-close(
+						type='button' data-bs-dismiss='modal' aria-label='Close'
+					)
+				.modal-body
+					form#ownerModalForm(method='POST')
+						.mb-3
+							label.form-label(for='owner_code')
+								| Enter owner code to get owner access
+							.alert.owner-alert.d-none(role='alert')
+								|
+							input#owner_code.form-control(
+								type='text' name='owner_code' required
+							)
+						button#ownerModalButton.btn.btn-secondary.mt-3.px-3(type='submit')
+							span.loading.d-none.spinner-border.spinner-border-sm(
+								role='status' aria-hidden='true'
+							)
+							span.ms-2 Get Access

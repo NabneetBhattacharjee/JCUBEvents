@@ -1,0 +1,57 @@
+nav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top.shadow-sm
+	.container.p-2
+		a.navbar-brand(href=pages.home)
+			img(
+				src='/img/logo.png' alt='logo' width='150' height='60'
+			)
+		button.navbar-toggler(
+			type='button' data-bs-toggle='collapse' data-bs-target='#navbar' 
+			aria-controls='navbar' aria-expanded='false' 
+			aria-label='Toggle navigation'
+		)
+			span.navbar-toggler-icon
+
+		#navbar.collapse.navbar-collapse
+			ul.navbar-nav.me-auto.mb-2.mb-lg-0
+				if user
+					//- Authenticated
+					if user.role === roles.owner || user.role === roles.admin
+						li.nav-item.my-3-sm
+							a.nav-link.bg-secondary.rounded.text-white.w-auto(
+								href=pages.events.create
+							) Create Event
+					else
+						li.nav-item.my-3-sm
+							a.nav-link.bg-primary.rounded.text-white(
+								href=pages.user.events
+							) My Events
+				else
+					//- Unauthenticated
+					li.nav-item
+						a.nav-link(href=pages.auth.signup) Signup
+					li.nav-item
+						a.nav-link(href=pages.auth.login) Login
+
+			form.d-flex.me-5(action=pages.search)
+				input.form-control.me-2(
+					type='search' placeholder='Search' aria-label='Search'
+					name="q"
+				)
+				button.btn.btn-outline-secondary(type='submit') Search
+
+			if user
+				.nav-item.dropdown
+					button#navbarDropdown.btn.btn-outline-secondary.dropdown-toggle(
+						type="button" data-bs-toggle='dropdown' aria-expanded='false'
+					)
+						|#{user.name}
+					ul.dropdown-menu(aria-labelledby='navbarDropdown')
+						if user.role === roles.owner || user.role === roles.admin
+							li
+								a.dropdown-item(href=pages.events.dashboard) My Events
+						li
+							form.dropdow-item(action=pages.auth.logout, method="post")
+								button.btn.text-danger(
+									href=pages.auth.logout
+									type="submit"
+								) Logout

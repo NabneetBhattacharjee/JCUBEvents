@@ -1,0 +1,16 @@
+//- Provide the `event` item
+.mr-3.rounded-3
+	li.p-3.shadow
+		h5.lead
+			a.text-decoration-none(
+				href=pages.events.item(event._id).show
+			) #{event.name}
+		p.text-muted
+			strong Start Date: 
+			span #{new Date(event.start_date).toDateString()}
+			br
+			strong Start Time: 
+			span #{event.start_time}
+			br
+			strong Venue: 
+			span.text-info #{event.location}

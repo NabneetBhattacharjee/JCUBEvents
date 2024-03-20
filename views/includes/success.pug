@@ -1,0 +1,5 @@
+//- Only show the success messag if it's in the session
+if success
+	.alert.alert-success.alert-dismissible.fade.show(role='alert')
+		span #{success}
+		button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')

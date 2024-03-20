@@ -1,0 +1,88 @@
+extends ../layout
+
+block content
+	.d-flex.flex-column.my-4
+		form.p-3.shadow.rounded(
+			action=pages.events.store method='post'
+			enctype='multipart/form-data'
+		)
+			.row.d-flex.justify-content-between
+
+				include ../includes/errors
+
+				.col-md-4
+					h4.text-muted Basic Details
+					.mb-3
+						label.form-label(for='name')  Event Name 
+						input.form-control(
+							id='name' type='text' name='name'
+							value=body.name || null
+						)
+					.mb-3
+						label.form-label(for='location')
+							| Event location
+						input.form-control(
+							id='location' type='text' name='location'
+							value=body.location || null
+						)
+					.mb-3
+						label.form-label(for='start_date')
+							| Start date
+						input.form-control(
+							id='start_date' type='date' name='start_date'
+							value=body.start_date || null
+						)
+					.mb-3
+						label.form-label(for='start_time')
+							| Start time
+						input.form-control(
+							id='start_time' type='time' name='start_time'
+							value=body.start_time || null
+						)
+					#dateDiv.hide
+						.mb-3
+							label.form-label(for='end_date')
+								| End date
+							input.form-control(
+								id='end_date' type='date' name='end_date'
+								value=body.end_date || null
+							)
+						.mb-3
+							label.form-label(for='end_time')
+								| End time
+							input.form-control(
+								id='end_time' type='time' name='end_time'
+								value=body.end_time || null
+							)
+				.col-md-4
+					h4.text-muted Event type and logo
+					.mb-3
+						label.form-label(for='logo') Event logo 
+						input.form-control(
+							id='logo' type='file' name='logo' 
+						)
+						small.text-primary.p-2.bg-light.d-inline-block.mt-2 
+							|Only #[strong .jpg, .png, .jpeg and .gif] allowed
+							br
+							| File size limit #[strong 5mb]
+					.mb-3
+						label.form-label(for='type')
+							| Event Type
+						.form-check
+							input#free.form-check-input(
+								type='radio' name='type' value=eventTypes.free
+							)
+							label.form-check-label(for='free') #{eventTypes.free}
+						.form-check
+							input#paid.form-check-input(
+								type='radio' name='type' value=eventTypes.paid
+							)
+							label.form-check-label(for='paid') #{eventTypes.paid}
+				.col-md-4
+					h4.text-muted Event Description
+					.mb-3
+						textarea.form-control(
+							rows='10' name='description' id="description"
+							placeholder='Provide a detailed event description here ...'
+						) #{body.description}
+			button.btn.btn-primary(type='submit') Save

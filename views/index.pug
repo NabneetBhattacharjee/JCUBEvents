@@ -1,0 +1,43 @@
+extends layout.pug
+
+block content
+	.bg-light.hero
+		.hero-content.text-center.shadow.rounded-3.text-light.p-5
+			h2.text-muted JCUB Events
+
+			small.text-muted.h6
+				| Find events and get productive as soon as now
+
+			form.d-flex.flex-column.mt-3(action='/search')
+				.mb-3
+					input.form-control.text-center(
+						type='search' name='q' placeholder='Search for events'
+					)
+				button.btn.btn-outline-secondary(type='submit')
+					| Find events
+
+	.container.py-3
+		h3.text-muted.text-center.my-4 Available Events
+
+		.row.g-2.m-0.mt-5
+			if events.length > 0
+				each event in events
+					.col-md-3.shadow-sm.mb-3.rounded-3
+						img.mb-3.shadow-sm.rounded-3(
+							src=event.logo.path 
+							alt=event.logo.name width='100%'
+						)
+						.p-3
+						h5
+							a(href=pages.events.item(event._id).show)= event.name
+						p.text-muted
+							strong Start Date: 
+							span= new Date(event.start_date).toDateString()
+							br
+							strong Start Time: 
+							span= event.start_time
+							br
+							strong Venue: 
+							span.text-info= event.location
+			else
+				p.text-center No Events

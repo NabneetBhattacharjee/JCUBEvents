@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	h2.mt-4.lead Hello, #[strong= user.name]
+
+	if events.length > 0
+		p.my-3 You are attending the following events
+
+		ul.row.m-0.p-0.my-4
+			each event in events
+				.col-md-3.list-unstyled
+					include ../events/preview
+	else
+		p.my-3 You are not attending any event
