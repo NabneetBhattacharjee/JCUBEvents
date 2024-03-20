@@ -1,7 +1,7 @@
 // Module dependencies
 //import path from "path";
 //import express from "express";
-import session from "express-session";
+//import session from "express-session";
 import MongoStore from "connect-mongo";
 import passport from "passport";
 import flash from "connect-flash";
@@ -23,6 +23,7 @@ const path = require("path");
 // Initialize Express application
 const express = require("express");
 const app = express();
+const session = require("express-session");
 
 // Start the database
 databaseConfig();

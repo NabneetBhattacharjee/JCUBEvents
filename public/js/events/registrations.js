@@ -1,11 +1,9 @@
-
 const registerForm = document.getElementById("event-register-form");
 const cancelForm = document.getElementById("event-cancel-form");
 const studentIdEl = document.getElementById("student_id");
 const eventIdEl = document.getElementById("event_id");
 const registerLoadingEl = document.querySelector(".register-loading");
 const registerAlertEl = document.querySelector(".register-alert");
-
 
 async function addRegistration(event) {
   event.preventDefault();
@@ -38,7 +36,7 @@ async function addRegistration(event) {
     registerAlertEl.classList.toggle("alert-success");
     registerAlertEl.innerText += "\nReloading in 2 seconds";
 
-    setTimeout(() => (window.location.href = `/events/${event_id}`), 2000);
+    setTimeout(() => (window.location.href = `/events/${event_id}`), 1000);
   } else {
     registerAlertEl.classList.toggle("alert-danger");
   }
